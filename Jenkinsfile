@@ -11,15 +11,7 @@ pipeline {
     }
     
     stages {
-        stage('Clone Code') {
-            agent {
-            	label 'master'
-        	}
-        	steps {
-                echo '1.Git Clone Code'
-                git branch: 'main', url: 'https://github.com/Brianne-Bao/cloud-native.git'
-            }
-    	}
+
         stage('Maven Build') {
             agent {
             	docker {
