@@ -17,7 +17,7 @@ pipeline {
         	}
         	steps {
                 echo '1.Git Clone Code'
-                git url: '$GIT_URL'
+                git url: 'https://github.com/Brianne-Bao/cloud-native.git'
             }
     	}
         stage('Maven Build') {
@@ -60,7 +60,7 @@ node('slave') {
     container('jnlp-kubectl') {
         stage('Clone YAML') {
             echo '5. Git Clone YAML To Slave'
-            git url: '$GIT_URL'
+            git url: 'https://github.com/Brianne-Bao/cloud-native.git'
         }
         stage('YAML') {
             echo '6. Change YAML File Stage'
